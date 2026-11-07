@@ -1,19 +1,36 @@
-
-# Python virtual environment
+# Python virtual environments
 .venv/
 venv/
+env/
 
-# Python cache
+# Python cache / build
 __pycache__/
 *.pyc
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Test & lint caches
 .pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
-# Streamlit secrets
-.streamlit/secrets.toml
-
-# IDE and environment
-.vscode/
+# Secrets and local configuration
 .env
+.env.*
+.streamlit/secrets.toml
+*.pem
+*.key
+
+# Generated reports
+cyberscore-*.json
+
+# IDE / tooling
+.vscode/
+.idea/
+.claude/
 
 # OS files
 .DS_Store

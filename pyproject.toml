@@ -1,0 +1,36 @@
+[project]
+name = "cyberscore-lite"
+version = "1.0.0"
+description = "External cyber exposure & security posture scoring (DNS, TLS, HTTP headers) with an explainable score."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit>=1.40",
+    "dnspython>=2.6",
+    "cryptography>=42",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+extend-exclude = [".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "BLE"]
+ignore = [
+    "S101",  # assert is fine in tests and for internal invariants
+    "UP035", # typing.Mapping/Sequence imports kept for readability
+    "UP042", # (str, Enum) kept: stable str()/JSON behaviour across versions
+    "S105",  # false positive: Status.PASS is not a password
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S", "B", "E501", "BLE"]

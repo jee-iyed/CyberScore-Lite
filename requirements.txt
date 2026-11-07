@@ -1,6 +1,4 @@
-
-streamlit
-dnspython
-requests
-cryptography
-pytest
+# Runtime dependencies (Python 3.11+)
+streamlit>=1.40
+dnspython>=2.6
+cryptography>=42
