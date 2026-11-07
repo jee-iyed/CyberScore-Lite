@@ -1,0 +1,6 @@
+
+streamlit
+dnspython
+requests
+cryptography
+pytest
